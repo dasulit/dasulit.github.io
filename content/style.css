@@ -1,0 +1,190 @@
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  letter-spacing: 0.03em;
+  font-size: 20pt;
+  font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+  font-weight: 400;
+}
+
+.site-title,
+.site-title a {
+  font-size: 36pt;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 28pt;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+ul {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+a, ul li a {
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+ul li a::before {
+  position: absolute;
+  right: -1.5em;
+  opacity: 0;
+}
+
+.nav-item:nth-child(1) a::before { content: '✦'; }
+.nav-item:nth-child(2) a::before { content: '◍'; }
+.nav-item:nth-child(3) a::before { content: '▲'; }
+
+ul li a:hover::before,
+ul li a:active::before,
+ul li a[aria-current="page"]::before {
+  opacity: 1;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-photo {
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+/* LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 50px;
+  height: 100vh;
+}
+
+main {
+  padding: 50px;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    position: static;
+    height: auto;
+    padding: 30px;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+}
+
+/* SKETCHBOOK */
+.sketchbook > p {
+  display: none;
+}
+
+.sketchbook {
+  margin-top: 40px;
+  column-count: 2;
+  column-gap: 24px;
+}
+
+.sketchbook figure {
+  position: relative;
+  break-inside: avoid;
+  margin: 0 0 24px;
+}
+
+.sketchbook figcaption {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sketchbook {
+    column-count: 1;
+  }
+}
+
+/* ILLUSTRATION */
+.illustration-figure > p,
+.illustration-pair > p {
+  display: none;
+}
+
+.illustration-figure {
+  margin: 0 0 80px;
+}
+
+.illustration-figure img {
+  width: 100%;
+}
+
+.illustration-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.illustration-pair {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.illustration-pair .illustration-figure {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .illustration-pair {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .illustration-pair .illustration-figure {
+    width: 80%;
+  }
+
+  .illustration-figure {
+    margin-bottom: 10px;
+  }
+}
+
+#caption-tooltip {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  background: white;
+  max-width: 200px;
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-size: 18pt;
+}

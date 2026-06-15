@@ -1,0 +1,47 @@
+---
+title: Dana Sulit
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Sulit – {{ title }}</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <p class="site-title"><a href="/">Dana Sulit</a></p>
+        <nav>
+          <ul class="nav">
+          {%- for entry in collections.all | eleventyNavigation %}
+            <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+          {%- endfor %}
+          </ul>
+        </nav>
+      </header>
+      <main>
+        {{ content | safe }}
+      </main>
+    </div>
+    <div id="caption-tooltip"></div>
+    <script>
+      const tooltip = document.getElementById('caption-tooltip');
+      document.querySelectorAll('.sketchbook figure').forEach(figure => {
+        const text = figure.querySelector('figcaption').textContent;
+        figure.addEventListener('mouseenter', () => {
+          tooltip.textContent = text;
+          tooltip.style.opacity = '1';
+        });
+        figure.addEventListener('mousemove', e => {
+          tooltip.style.left = e.clientX + 14 + 'px';
+          tooltip.style.top = e.clientY + 14 + 'px';
+        });
+        figure.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = '0';
+        });
+      });
+    </script>
+  </body>
+</html>
