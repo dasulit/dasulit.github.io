@@ -8,8 +8,16 @@ eleventyNavigation:
 images:
   - src: illustration/illustration-001.png
     caption: "Biker in the Philippines, pen/marker -> scanned -> riso-printed"
+  - src: illustration/illustration-011.png
+    caption: "Page from an ongoing comic about traveling with my family in Boracay, Philippines"
+  - src: illustration/illustration-010.png
+    caption: "Vows to Alexander"
   - src: illustration/illustration-006.png
     caption: "Childhood visit to the Philippines, pen/marker"
+  - src: illustration/illustration-009.png
+    caption: "View from Lasita in LA"
+  - src: illustration/illustration-012.png
+    caption: "Olivia Rodrigo in Stupid Song"
   - pair:
     - src: illustration/illustration-004.png
       caption: "Sneakers on a summer day, colored pencil"

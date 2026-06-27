@@ -142,7 +142,10 @@ main {
 }
 
 .illustration-figure img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 95vh;
+  width: auto;
+  margin: 0 auto;
 }
 
 .illustration-figure figcaption {
