@@ -49,6 +49,7 @@ ul li a::before {
 .nav-item:nth-child(1) a::before { content: '✦'; }
 .nav-item:nth-child(2) a::before { content: '◍'; }
 .nav-item:nth-child(3) a::before { content: '▲'; }
+.nav-item:nth-child(4) a::before { content: '❀'; }
 
 ul li a:hover::before,
 ul li a:active::before,
@@ -90,6 +91,7 @@ main {
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
+    align-content: start;
   }
 
   header {

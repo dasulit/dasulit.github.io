@@ -1,0 +1,10 @@
+---
+layout: layout.njk
+---
+<h1>{{ title }}</h1>
+{{ year }}
+{% for page in pages %}
+  <figure class="comic-page">
+    <img src="/img/{{ page.img }}" alt="{{ page.alt }}" width="600">
+  </figure>
+{% endfor %}
